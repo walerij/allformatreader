@@ -17,18 +17,20 @@ def main():
     if args.file:
         result_text = ""
         extension = Path(args.file).suffix # получаем расширение файла
-        if extension==".txt":
+        if extension == ".txt":
             result_text = txt_.extact_text(args.file)
-        elif extension==".docx":
+        elif extension == ".docx":
             result_text = doc_.extact_text_docx(args.file)
-        elif extension == ".doc":
-            result_text = doc_.extact_text_doc(args.file)
 
         print(result_text)
 
     elif args.path:
         #получаем имена файлов директории
-        print(args.path)
+        result_text = ""
+
+
+
+        print(result_text)
 
 
 

@@ -16,8 +16,3 @@ class Docreader():
         return text
 
 
-    def extact_text_doc(self, file):
-        with open(file, "rb") as doc_file:
-            result = mammoth.convert_to_text(doc_file)
-            text = result.value
-            return text
