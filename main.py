@@ -6,10 +6,15 @@ def main():
     parser.add_argument("--path", help="Каталог, где хранятся обрабатываемые файлы ")
     #parser.add_argument("--clean", action="store_true", help="Очистка текста")
     args = parser.parse_args()
-    #print(args)
+
+    #если параметр  - файл
     if args.file:
-        extension = Path(args.file).suffix
-        print(extension)
+        extension = Path(args.file).suffix # получаем расширение файла
+        print(extension) # печатаем его
+
+    elif args.path:
+        #получаем имена файлов директории
+        print(args.path)
 
 
 
