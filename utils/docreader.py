@@ -16,6 +16,7 @@ class Docreader():
             doc = Document(file)  # конвертируй .doc в .docx
             text = "\n".join([para.text for para in doc.paragraphs])
         except Exception as e:
+
             text = e
         return text
 
