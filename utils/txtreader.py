@@ -5,6 +5,7 @@ class Txtreader():
         pass
 
     def extact_text(self, file):
+        text = ""
         with open(file, "r", encoding="utf-8") as f:
             text = f.read()
-            return text
+        return text
