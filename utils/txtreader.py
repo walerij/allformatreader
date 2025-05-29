@@ -6,6 +6,9 @@ class Txtreader():
 
     def extact_text(self, file):
         text = ""
-        with open(file, "r", encoding="utf-8") as f:
-            text = f.read()
+        try:
+            with open(file, "r", encoding="utf-8") as f:
+                text = f.read()
+        except Exception as e:
+            text=e
         return text

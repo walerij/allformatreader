@@ -4,10 +4,13 @@ class Pdfreader():
 
 
     def extract_text_pdf(self,file):
-        doc = fitz.open(file)
-        text = ""
 
-        for page in doc:
-            text += page.get_text()
+        text = ""
+        try:
+            doc = fitz.open(file)
+            for page in doc:
+                text += page.get_text()
+        except Exception as e:
+            text=e
 
         return text
