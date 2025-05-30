@@ -17,8 +17,9 @@ def main():
 
     #если параметр  - файл
     if args.file:
-        result_text = parse_file_all_formats(args.file, doc_, pdf_, txt_)
-
+        result_text = []
+        result= parse_file_all_formats(args.file, doc_, pdf_, txt_)
+        result_text.append([args.file, result])
         print(result_text)
 
     elif args.path:
