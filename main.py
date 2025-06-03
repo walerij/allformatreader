@@ -38,14 +38,37 @@ def main():
 def parse_file_all_formats(file, doc_, pdf_, txt_):
     result_text = ""
     extension = Path(file).suffix  # получаем расширение файла
-    if extension == ".txt":
+    if search_ext_txt(extension):
         result_text = txt_.extact_text(file)
-    elif extension == ".docx":
+    elif search_ext_office(extension):
         result_text = doc_.extact_text_docx(file)
-    if extension == ".pdf":
+    if search_ext_pdf(extension) == ".pdf":
         result_text = pdf_.extract_text_pdf(file)
     return result_text
 
+
+
+#проверка, текстовый ли формат файла
+def search_ext_txt(ext):
+    exts = [".txt", ".cmd",".bat",".py",".cs",".html",".xml",".css"]
+    if ext in exts:
+        return True
+    return False
+
+
+#Проверка, не pdf ли формат
+def search_ext_pdf(ext):
+    exts = [".pdf"]
+    if ext in exts:
+        return True
+    return False
+
+#Проверка, не офисный ли формат ли формат
+def search_ext_office(ext):
+    exts = [".docx"]
+    if ext in exts:
+        return True
+    return False
 
 if __name__ == "__main__":
     main()
